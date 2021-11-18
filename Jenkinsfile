@@ -22,8 +22,8 @@ pipeline{
         stage('Deploy Docker Image') {
             steps {
                 script {
-                 withCredentials([string(credentialsId: 'bhavani005', variable: 'dockerhubpwd')]) {
-                    bat 'docker login -u bhavani005 -p ${dockerhubpwd}'
+                 withCredentials([string(credentialsId: 'bhavani005', variable: 'dokerhubcred')]) {
+                    bat 'docker login -u bhavani005 -p ${dockerhubcred}'
                  }  
                  bat 'docker push bhavani005/sample-hello-world'
                 }
