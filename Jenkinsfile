@@ -25,7 +25,7 @@ pipeline{
                  withCredentials([string(credentialsId: 'bhavani005', variable: 'dokerhubcred')]) {
                     bat 'docker login -u bhavani005 -p ${dockerhubcred}'
                  }  
-                 bat 'docker push bhavani005/my-first-repo'
+                 bat 'docker push bhavani005/sample-hello-world'
                 }
             }
         }
