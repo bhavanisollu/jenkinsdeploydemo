@@ -1,6 +1,17 @@
-
 pipeline{
     agent any
+    tools {
+        maven 'MAVEN'
+    }
+    stages {
+        stage('Build Maven') {
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/bhavanisollu/jenkinsdeploydemo.git']]])
+
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 script {
@@ -19,3 +30,4 @@ pipeline{
             }
         }
     }
+}
