@@ -1,5 +1,5 @@
-apiVersion : apps/v1beta1
-kind : deployment
+apiVersion : apps/v1
+kind : Deployment
 metadata : 
   name : sample-hello-world-deployment
   lables :
@@ -23,7 +23,7 @@ spec :
 ---
 
 appVersion : v1
-kind : service
+kind : Service
 metadata:
   name : sample-hello-world-service
 spec:
