@@ -29,5 +29,12 @@ pipeline{
                 }
             }
         }
+        stage('Deploy to kubernetes'){
+            steps{
+                script{
+                    kubernetesDeploy(configs:"deploymentAndService.yaml" , kubeconfigId : "jenkins-deploy-kubernetes-id")
+                }
+            }
+        }
     }
 }

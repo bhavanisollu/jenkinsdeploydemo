@@ -1,0 +1,36 @@
+apiVersion : apps/v1
+kind : deployment
+metadata : 
+  name : sample-hello-world-deployment
+  lables :
+    app : hello-world
+spec :
+  replicas : 2
+  selector : 
+    matchLables :
+      app : hello-world
+  template :
+    metadata:
+      lables:
+        app : hello-world
+    spec:
+      containers:
+      - name : hello-world-pod
+        image : bhavani005/sample-hello-world
+        ports :
+        - containerPort : 80 
+
+---
+
+appVersion : v1
+kind : service
+metadata:
+  name : sample-hello-world-service
+spec:
+  selector :
+    app : hello-world
+  ports :
+    - protocol : TCP 
+      port : 9798
+      targetPort : 80
+    
