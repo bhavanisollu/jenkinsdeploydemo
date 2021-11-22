@@ -32,7 +32,13 @@ pipeline{
         stage('Deploy to kubernetes'){
             steps{
                 script{
-                    kubernetesDeploy(configs:"deploymentAndService.yaml" , kubeconfigId : "jenkins-deploy-kubernetes-id")
+                    // kubernetesDeploy(configs:"deploymentAndService.yaml" , kubeconfigId : "jenkins-deploy-kubernetes-id")
+                    try{
+                    bat 'kubectl apply -f deploymentAndService.yaml'
+                    }
+                    catch(error){
+                    bat 'kubectl create -f deploymentAndService.yaml'
+                    }
                 }
             }
         }
