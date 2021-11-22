@@ -55,7 +55,7 @@
           <configuration>  
                 <archive>  
                     <manifest>  
-                        <mainClass>com.lti.App</mainClass>  
+                        <mainClass>com.lti.jenkinsdeploy.App</mainClass>  
                     </manifest>  
                 </archive>  
           </configuration>
