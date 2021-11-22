@@ -2,16 +2,16 @@ apiVersion : apps/v1
 kind : Deployment
 metadata : 
   name : sample-hello-world-deployment
-  lables :
+  labels :
     app : hello-world
 spec :
   replicas : 2
   selector : 
-    matchLables :
+    matchLabels :
       app : hello-world
   template :
     metadata:
-      lables:
+      labels:
         app : hello-world
     spec:
       containers:
