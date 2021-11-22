@@ -34,10 +34,10 @@ pipeline{
                 script{
                     // kubernetesDeploy(configs:"deploymentAndService.yaml" , kubeconfigId : "jenkins-deploy-kubernetes-id")
                     try{
-                    bat 'kubectl apply -f deploymentAndService.yaml'
+                    bat 'kubectl apply -f deploymentAndService.yaml --validate=false'
                     }
                     catch(error){
-                    bat 'kubectl create -f deploymentAndService.yaml'
+                    bat 'kubectl create -f deploymentAndService.yaml --validate=false'
                     }
                 }
             }
