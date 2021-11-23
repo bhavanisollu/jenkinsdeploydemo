@@ -13,12 +13,12 @@ public class App
         System.out.println("a + b is "+res);
     }
     
-    public void Subtraction(int a , int b){
+    public void subtraction(int a , int b){
         int res = a - b;
         System.out.println("a - b is "+res);
     }
     
-    public void multipication(int a , int b){
+    public void multiplication(int a , int b){
         double res = a * b;
         System.out.println("a * b is "+res);
     }
