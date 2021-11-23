@@ -18,7 +18,7 @@ spec :
       - name : hello-world-pod
         image : bhavani005/sample-hello-world
         command : ["/bin/bat"]
-        args :["echo hello ; sleep 180"]
+        args : ["echo hello ; sleep 180"]
         ports :
         - containerPort : 80 
 ---
