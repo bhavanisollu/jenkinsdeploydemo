@@ -17,8 +17,6 @@ spec :
       containers:
       - name : hello-world-pod
         image : bhavani005/sample-hello-world
-        command : ["/bin/sh"]
-        args : ["-c", "java" , "-jar" , "/jenkinsdeploy.jar"]
         ports :
         - containerPort : 80 
 ---
