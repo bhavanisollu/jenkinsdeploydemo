@@ -19,7 +19,6 @@ spec :
         image : bhavani005/sample-hello-world
         ports :
         - containerPort : 80 
-      restartPolicy : OnFailure
 ---
 apiVersion : v1
 kind : Service
