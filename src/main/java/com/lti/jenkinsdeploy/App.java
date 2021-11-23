@@ -1,6 +1,6 @@
 package com.lti.jenkinsdeploy;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * Hello world!
@@ -32,17 +32,22 @@ public class App
     
     public static void main( String[] args )
     {   
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to my Calculator!");
-        System.out.println( "Enter 1st no : " );
-        int a = sc.nextInt();
-        sc.nextLine();
-        System.out.println("Enter 2nd no : ");
-        int b = sc.nextInt();
-        sc.nextLine();
+        System.out.println( "1st no is : a = 8" );
+        int a = 8;
+        //sc.nextLine();
+        System.out.println("2nd no is : b = 5");
+        int b = 5;
+        //sc.nextLine();
         
         App obj = new App();
+        obj.addition(a,b);
+        obj.subtraction(a,b);
+        obj.multiplication(a,b);
+        obj.division(a,b);
         
+        /*
         System.out.println( "Enter your choice.\n 1.Addition \n 2.Subtraction \n 3.Multiplication \n 4.Division" );
         int ch = sc.nextInt();
         
@@ -63,5 +68,6 @@ public class App
                 System.out.println("Hello! please enter from above choices only");
                 break;
         }
+        */
     }
 }
