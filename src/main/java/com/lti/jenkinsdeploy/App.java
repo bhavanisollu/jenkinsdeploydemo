@@ -32,7 +32,8 @@ public class App
     
     public static void main( String[] args )
     {   
-        Scanner sc = new Scanner(system.in);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to my Calculator!");
         System.out.println( "Enter 1st no : " );
         int a = sc.nextInt();
         sc.nextLine();
