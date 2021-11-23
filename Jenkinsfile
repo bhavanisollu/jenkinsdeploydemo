@@ -31,14 +31,28 @@ pipeline{
         }
         stage('Deploy to kubernetes'){
             steps{
+                sshagent(['ssh-key']) {
+                    bat "scp -o StrictHostKeyChecking=no deploymentAndService.yaml ec2-user@65.0.138.97:home/ec2-user/"
+                }
                 script{
+                    try{
+                        bat "ssh ec2-user@65.0.138.97 kubectl apply -f ."
+                    }
+                    catch(error){
+                        bat "ssh ec2-user@65.0.138.97 kubectl create -f ."
+                    }
+                    
+                    
                     // kubernetesDeploy(configs:"deploymentAndService.yaml" , kubeconfigId : "jenkins-deploy-kubernetes-id")
+                    /*
                     try{
                     bat 'kubectl apply -f deploymentAndService.yaml --validate=false'
                     }
                     catch(error){
                     bat 'kubectl create -f deploymentAndService.yaml --validate=false'
                     }
+                    */
+                    
                 }
             }
         }
