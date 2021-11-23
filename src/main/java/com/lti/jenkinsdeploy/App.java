@@ -40,21 +40,23 @@ public class App
         int b = sc.nextInt();
         sc.nextLine();
         
+        App obj = new App();
+        
         System.out.println( "Enter your choice.\n 1.Addition \n 2.Subtraction \n 3.Multiplication \n 4.Division" );
         int ch = sc.nextInt();
         
         switch(ch){
             case 1:
-                addition(a,b);
+                obj.addition(a,b);
                 break;
             case 2:
-                subtraction(a,b);
+                obj.subtraction(a,b);
                 break;
             case 3:
-                multiplication(a,b);
+                obj.multiplication(a,b);
                 break;
             case 4:
-                division(a,b);
+                obj.division(a,b);
                 break;
             default:
                 System.out.println("Hello! please enter from above choices only");
