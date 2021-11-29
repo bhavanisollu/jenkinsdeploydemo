@@ -32,14 +32,14 @@ pipeline{
         stage('Deploy to kubernetes'){
             steps{
                 sshagent(['pem-ssh-key']) {
-                    bat "scp -o StrictHostKeyChecking=no deploymentAndService.yaml ec2-user@3.110.93.22:home/ec2-user/"
+                    bat "scp -o StrictHostKeyChecking=no deploymentAndService.yaml ec2-user@13.234.114.162:home/ec2-user/"
                 }
                 script{
                     try{
-                        bat "ssh ec2-user@3.110.93.22 kubectl apply -f ."
+                        bat "ssh ec2-user@13.234.114.162 kubectl apply -f ."
                     }
                     catch(error){
-                        bat "ssh ec2-user@3.110.93.22 kubectl create -f ."
+                        bat "ssh ec2-user@13.234.114.162 kubectl create -f ."
                     }
                     
                     
