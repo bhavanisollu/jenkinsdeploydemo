@@ -31,7 +31,7 @@ pipeline{
         }
         stage('Deploy to kubernetes'){
             steps{
-                sshagent(['pem-ssh-key']) {
+                sshagent(['jenkins-build-pipeline-ssh-key']) {
                     bat "scp -o StrictHostKeyChecking=no deploymentAndService.yaml ec2-user@13.234.114.162:home/ec2-user/"
                 }
                 script{
